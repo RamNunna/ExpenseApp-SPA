@@ -1,27 +1,26 @@
-
 <div class="main-content container-fluid">
   <div class="row">
     <div class="col-lg-6">
       <div class="card card-border-color card-border-color-primary">
         <div class="card-header card-header-divider">Register</div>
         <div class="card-body">
-          <form data-parsley-validate="" novalidate="">
+          <form #ngRegister="ngForm" (ngSubmit)="register()">
             <div class="form-group row">
               <label class="col-3 col-lg-2 col-form-label text-right" for="inputEmail2">Email</label>
               <div class="col-9 col-lg-10">
-                <input class="form-control" id="inputEmail2" type="email" required="" parsley-type="email" placeholder="Email" [(ngModel)]="model.emailId">
+                <input class="form-control" id="emailid" name="emailid" type="text" required placeholder="Email" [(ngModel)]="model.emailid" >
               </div>
             </div>
             <div class="form-group row">
               <label class="col-3 col-lg-2 col-form-label text-right" for="inputEmail2">Mobile No</label>
               <div class="col-9 col-lg-10">
-                <input class="form-control" id="inputEmail2" type="mobileno" required="" parsley-type="mobileno" placeholder="mobileno" [(ngModel)]="model.mobileNo">
+                <input class="form-control" id="mobileno" name="mobileno" type="text" required placeholder="Mobile No" [(ngModel)]="model.mobileno">
               </div>
             </div>
             <div class="form-group row">
-              <label class="col-3 col-lg-2 col-form-label text-right" for="inputPassword2">Password</label>
+              <label class="col-3 col-lg-2 col-form-label text-right" for="inputPassword2" >Password</label>
               <div class="col-9 col-lg-10">
-                <input class="form-control" id="inputPassword2" type="password" required="" placeholder="Password" >
+                <input class="form-control" id="password" name="password" type="password" required placeholder="Password" [(ngModel)]="model.password">
               </div>
             </div>
            
