@@ -1,0 +1,113 @@
+<div class="main-content container-fluid">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card card-border-color card-border-color-primary">
+        <div class="card-header card-header-divider">Expense</div>
+        <div class="card-body">
+          <form #expenseForm="ngForm" (ngSubmit)="addExpense()">
+            <div class="form-group row">
+              <label class="col-3 col-lg-2 col-form-label text-right"
+                >Email</label
+              >
+              <div class="col-9 col-lg-10">
+                <input
+                  class="form-control"
+                  id="expenseName"
+                  name="emailid"
+                  type="text"
+                  required
+                  placeholder="Expense Name"
+                  [(ngModel)]="model.expensename"
+                />
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-3 col-lg-2 col-form-label text-right"
+                >Amount</label
+              >
+              <div class="col-9 col-lg-10">
+                <input
+                  class="form-control"
+                  id="amount"
+                  name="amount"
+                  type="text"
+                  required
+                  placeholder="Amount"
+                  [(ngModel)]="model.amount"
+                />
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-3 col-lg-2 col-form-label text-right"
+                >Date</label
+              >
+              <div class="col-9 col-lg-10">
+                <input
+                  class="form-control"
+                  id="date"
+                  name="date"
+                  type="date"
+                  [(ngModel)]="model.date"
+                />
+              </div>
+            </div>
+            <div class="row pt-2 pt-sm-5 mt-1">
+              <div class="col-sm-6 pl-0">
+                <p class="text-right">
+                  <button
+                    class="btn btn-space btn-primary"
+                    type="submit"
+                    [disabled]="!expenseForm.valid"
+                  >
+                    Add
+                  </button>
+                </p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin: 20px;">
+    <div class="col-lg-12">
+      <div class="card card-border-color card-border-color-primary">
+        <div class="card-header card-header-divider">Report</div>
+        <div class="card-body">
+          <table class="table table-striped table-centered mb-0">
+            <thead>
+              <tr>
+                <th>Expnese Name</th>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="table-user">
+                  <img
+                    src="assets/images/users/avatar-2.jpg"
+                    alt="table-user"
+                    class="mr-2 rounded-circle"
+                  />
+                  Risa D. Pearson
+                </td>
+                <td>AC336 508 2157</td>
+                <td>July 24, 1950</td>
+                <td class="table-action">
+                  <a href="javascript: void(0);" class="action-icon">
+                    <i class="mdi mdi-pencil"></i
+                  ></a>
+                  <a href="javascript: void(0);" class="action-icon">
+                    <i class="mdi mdi-delete"></i
+                  ></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

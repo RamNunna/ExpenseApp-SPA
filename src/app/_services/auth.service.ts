@@ -13,7 +13,8 @@ export class AuthService {
       map((respose: any) => {
         const user = respose;
         if (user) {
-          localStorage.setItem("token", user.token);
+          localStorage.setItem("token", user.Token);
+          localStorage.setItem("userid", user.UserId);
         }
       })
     );
