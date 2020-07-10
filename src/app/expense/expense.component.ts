@@ -17,13 +17,15 @@ export class ExpenseComponent implements OnInit {
   }
 
   addExpense() {
-    return this.expenseService.addExpense(this.model);
+    this.expenseService.addExpense(this.model);
+    this.getExpenses();
   }
   getExpenses() {
     this.expenseService
       .getExpenses(localStorage.getItem("userid"))
       .subscribe(
         (value) => {
+          console.log(value);
           this.expenses=value;
         },
         (error) => {}

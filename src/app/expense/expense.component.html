@@ -84,17 +84,12 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr *ngFor="let expense of expenses">
                 <td class="table-user">
-                  <img
-                    src="assets/images/users/avatar-2.jpg"
-                    alt="table-user"
-                    class="mr-2 rounded-circle"
-                  />
-                  Risa D. Pearson
+                 {{expense.ExpenseName}}
                 </td>
-                <td>AC336 508 2157</td>
-                <td>July 24, 1950</td>
+                <td>{{expense.Date | date}}</td>
+                <td>{{expense.Amount}}</td>
                 <td class="table-action">
                   <a href="javascript: void(0);" class="action-icon">
                     <i class="mdi mdi-pencil"></i
