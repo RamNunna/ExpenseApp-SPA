@@ -7,13 +7,13 @@
           <form #expenseForm="ngForm" (ngSubmit)="addExpense()">
             <div class="form-group row">
               <label class="col-3 col-lg-2 col-form-label text-right"
-                >Email</label
+                >Expense Name</label
               >
               <div class="col-9 col-lg-10">
                 <input
                   class="form-control"
                   id="expenseName"
-                  name="emailid"
+                  name="expenseName"
                   type="text"
                   required
                   placeholder="Expense Name"
@@ -91,12 +91,9 @@
                 <td>{{expense.Date | date}}</td>
                 <td>{{expense.Amount}}</td>
                 <td class="table-action">
-                  <a href="javascript: void(0);" class="action-icon">
-                    <i class="mdi mdi-pencil"></i
-                  ></a>
-                  <a href="javascript: void(0);" class="action-icon">
-                    <i class="mdi mdi-delete"></i
-                  ></a>
+                  <button class="btn btn-danger" (click)="deleteExpense(expense)"> Delete</button>
+        <!-- <button class="btn btn-success" (click)="editExpense(expense)" style="margin-left: 20px;"> Edit</button> -->
+                 
                 </td>
               </tr>
             </tbody>

@@ -12,13 +12,17 @@ export class AppComponent {
 
   isShowLogoutButton: boolean= false;
   ngOnInit() {
-    console.log(localStorage.getItem('userid'));
+    console.log("user id is "+localStorage.getItem('userid'));
     if(localStorage.getItem("userid"))
+    {
     this.isShowLogoutButton=true;
+    }
   }
 
   logout()
   {
+    console.log('logout');
+    this.isShowLogoutButton=false;
     localStorage.removeItem('userid');
     localStorage.removeItem('token');
     this.router.navigateByUrl('/login');

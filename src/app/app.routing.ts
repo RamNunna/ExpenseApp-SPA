@@ -1,11 +1,13 @@
 import { Routes, RouterModule } from '@angular/router';
 import { RegisterComponent  } from './register/register.component';
 import { LoginComponent } from './login/login.component';
-import { ExpenseComponent } from './expense/expense.component';
 const appRoutes : Routes =[
     {path: 'register', component : RegisterComponent },
     {path:'login', component:LoginComponent},
-    {path:'expense', component:ExpenseComponent},
+    {
+        path: 'expense',
+        loadChildren: () => import('./expense/expense.module').then(mod => mod.ExpenseModule)
+      },
     {path:'' , redirectTo:'all' , pathMatch:'full'}
 ];
 

@@ -7,6 +7,7 @@ import { IExpense } from "../_models/IExpense";
   providedIn: "root",
 })
 export class ExpenseService {
+  
   expenses: any = {};
   baseUrl = "http://localhost:44354/api/expense/";
   model: any;
@@ -17,11 +18,10 @@ export class ExpenseService {
 
     let token = localStorage.getItem("token");
 
-    const headers = new HttpHeaders().set("Authorization", `Bearer ${token}`);
-    headers.append("Authorization", `Bearer ${token}`);
+    const headers = new HttpHeaders().set("Content-Type", "application/json");
+    headers.set("Authorization", `Bearer ${token}`);
     console.log(headers);
     const options = { params: params, headers: headers };
-
     return this.http.get<IExpense[]>(this.baseUrl + "expenses", options);
   }
   addExpense(model: any) {
@@ -34,5 +34,14 @@ export class ExpenseService {
         console.log("somthing wrong in adding expenses");
       }
     );
+  }
+  getExpenseById(expenseId: any) {
+    let params = new HttpParams();
+    params = params.append("expenseId", expenseId);
+    let token = localStorage.getItem("token");
+    const headers = new HttpHeaders().set("Content-Type", "application/json");
+    headers.set("Authorization", `Bearer ${token}`);
+    const options = { params: params, headers: headers };
+    return this.http.get<IExpense[]>(this.baseUrl, options);
   }
 }

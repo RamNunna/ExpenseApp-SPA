@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   model: any = {};
   constructor(private authService: AuthService,private router: Router) {}
-
+  emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"; 
   ngOnInit() {}
   login() {
     this.authService.login(this.model).subscribe(
