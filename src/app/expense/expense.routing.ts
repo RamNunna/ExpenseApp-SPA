@@ -4,7 +4,7 @@ import { ExpenseComponent } from './expense.component';
 
 const routes: Routes = [
     {
-      path:'expense',
+      path:'',
       component:ExpenseComponent
     }
 ];

@@ -10,7 +10,7 @@ describe('Service: Expense', () => {
     });
   });
 
-  it('should ...', inject([ExpenseService], (service: ExpenseService) => {
-    expect(service).toBeTruthy();
-  }));
+  // it('should ...', inject([ExpenseService], (service: ExpenseService) => {
+  //   expect(service).toBeTruthy();
+  // }));
 });
